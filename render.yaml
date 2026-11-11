@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: trackflow
+    runtime: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    healthCheckPath: /health
+    envVars:
+      - key: JWT_SECRET
+        generateValue: true
+      - key: DB_URL
+        value: jdbc:h2:mem:trackflow;MODE=MySQL;DB_CLOSE_DELAY=-1;DATABASE_TO_LOWER=TRUE
+      - key: DB_USER
+        value: sa
+      - key: DB_PASSWORD
+        value: ""
+      - key: CORS_ORIGIN
+        value: "*"

@@ -107,3 +107,36 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
 .live-indicator.reconnecting > span, .live-indicator.connecting > span {
   background: #e5a83c; box-shadow: 0 0 0 3px #fff4df;
 }
+
+/* Interactive dashboard controls */
+.stat-card {
+  width: 100%; text-align: left; color: inherit; font: inherit; cursor: pointer;
+  transition: transform .15s ease, border-color .15s ease, box-shadow .15s ease;
+}
+.stat-card:hover { transform: translateY(-2px); border-color: #dcdaf8; box-shadow: 0 7px 18px #25234a0c; }
+.range-control {
+  display: inline-flex; align-items: center; gap: 7px; height: 32px; padding: 0 9px;
+  border: 1px solid #e9eaf0; border-radius: 6px; background: #fff; color: #707687; font-size: 10px;
+}
+.range-control select { border: 0; outline: 0; color: inherit; background: transparent; font-size: inherit; cursor: pointer; }
+.top-actions { position: relative; }
+.account-trigger { border: 0; padding: 0; cursor: pointer; }
+.account-trigger:hover { box-shadow: 0 0 0 3px #e9e8ff; }
+.account-menu {
+  position: absolute; top: calc(100% + 13px); right: 0; z-index: 15; width: min(280px, calc(100vw - 24px));
+  padding: 13px; border: 1px solid #e9eaf0; border-radius: 11px; background: #fff;
+  box-shadow: 0 14px 35px #1d213b20;
+}
+.account-menu-user { display: flex; align-items: center; gap: 10px; padding: 3px 2px 12px; }
+.account-menu-user > span:last-child { min-width: 0; display: grid; gap: 4px; }
+.account-menu-user b { overflow: hidden; color: #34394b; font-size: 11px; text-overflow: ellipsis; white-space: nowrap; }
+.account-menu-user small { overflow: hidden; color: #8e94a2; font-size: 10px; text-overflow: ellipsis; white-space: nowrap; }
+.account-switch { width: 100%; display: flex; align-items: center; gap: 8px; padding: 10px; border: 0; border-top: 1px solid #eff0f4; background: transparent; color: #5c6272; text-align: left; font-size: 11px; }
+.account-switch:hover { color: #625bd5; background: #f8f7ff; }
+@media (max-width: 760px) {
+  .range-control { height: 36px; font-size: 10px; }
+  .account-menu { top: calc(100% + 8px); right: -2px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .stat-card { transition: none; }
+}

@@ -99,3 +99,11 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
   .sidebar .nav-item:nth-child(n + 4) { display: none; }
   .mobile-menu, .mobile-nav-scrim, .mobile-close { display: none !important; }
 }
+
+.row-actions select {
+  width: 124px; height: 29px; padding: 0 7px; color: #596071; font-size: 9px;
+  border: 1px solid #e9eaf0; border-radius: 6px; background: #fff;
+}
+.live-indicator.reconnecting > span, .live-indicator.connecting > span {
+  background: #e5a83c; box-shadow: 0 0 0 3px #fff4df;
+}

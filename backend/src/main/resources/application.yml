@@ -1,0 +1,21 @@
+server:
+  port: ${PORT:8080}
+spring:
+  datasource:
+    url: ${DB_URL:jdbc:mysql://localhost:3306/trackflow?createDatabaseIfNotExist=true&useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC}
+    username: ${DB_USER:trackflow}
+    password: ${DB_PASSWORD:trackflow}
+  jpa:
+    hibernate:
+      ddl-auto: update
+    open-in-view: false
+    properties:
+      hibernate:
+        format_sql: true
+  jackson:
+    default-property-inclusion: non_null
+app:
+  jwt:
+    secret: ${JWT_SECRET:local-only-change-this-secret-to-a-long-random-value-32bytes}
+    expiration-ms: ${JWT_EXPIRATION_MS:86400000}
+  cors-origin: ${CORS_ORIGIN:http://localhost:5173}
